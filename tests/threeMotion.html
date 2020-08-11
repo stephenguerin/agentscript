@@ -61,9 +61,13 @@
                 model.turtles.ask(t => {
                     const mesh = t.mesh
                     if (t.id === 0) {
+                        t.mesh.position.x = t.mesh.position.x % 16
+                        t.mesh.position.y = t.mesh.position.y % 16
                         // if (model.ticks === 0) t.rotateY
                         mesh.translateX(0.1)
                         mesh.rotateY(-util.radians(1))
+                        mesh.rotateX(-util.radians(1))
+                        console.log(t.mesh.position.x)
                         // } else if (t.id === 2) {
                         //     if (model.ticks === 0)
                         //         // mesh.rotateZ(util.radians(90))
